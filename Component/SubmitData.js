@@ -1,11 +1,10 @@
 import firestore from '@react-native-firebase/firestore';
 
-const SubmitData = async (user,name,age,height,weight,phone1,phone2) => {
+const SubmitData = async (name,age,height,weight,phone1,phone2) => {
   firestore()
     .collection('posts')
-    .doc('Profile')
+    .doc("Profile")
     .set({
-      UserId: user.uid,
       Name: name,
       Age: age,
       Height: height,

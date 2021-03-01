@@ -13,14 +13,13 @@ const ProfileScreen = ({navigation}) => {
   const [weight, setWeight] = useState();
   const [phone1, setPhone1] = useState();
   const [phone2, setPhone2] = useState();
-  const {user} =useContext(AuthContext)
 
   return (
     <SafeAreaView>
       <ScrollView>
-        <View style={styles.ContainerScreen}>
-          <View style={styles.PositionForm}>
-            <Text style={styles.HeaderText}>Create Profile</Text>
+        <View style={styles.ContainerScreen2}>
+          <View style={styles.PositionForm2}>
+            <Text style={styles.HeaderText2}>Create Profile</Text>
             <FormInput
               labelValue={name}
               onChangeText={(userName) => setName(userName)}
@@ -54,7 +53,7 @@ const ProfileScreen = ({navigation}) => {
               onChangeText={(userWeight) => setWeight(userWeight)}
             />
           </View>
-          <Text style={styles.Text}>เบอร์โทรติดต่อ :</Text>
+          <Text style={styles.Text2}>เบอร์โทรติดต่อ :</Text>
           <FormInput
             placeholderText="เบอร์ติดต่อคนที่ 1"
             labelValue={phone1}
@@ -69,7 +68,7 @@ const ProfileScreen = ({navigation}) => {
             <FormButton
               ButtonTitle="Finish"
               onPress={() => {
-                SubmitData(user,name,age,height,weight,phone1,phone2)
+                SubmitData(name,age,height,weight,phone1,phone2)
                 navigation.navigate('Home');
               }}
             />
@@ -83,12 +82,12 @@ const ProfileScreen = ({navigation}) => {
 export default ProfileScreen;
 
 const styles = StyleSheet.create({
-  ContainerScreen: {
+  ContainerScreen2: {
     flex: 1,
     backgroundColor: '#000009',
     padding: 20,
   },
-  HeaderText: {
+  HeaderText2: {
     fontSize: 35,
     fontFamily: 'Delius-Regular',
     color: '#FFFFFF',
@@ -96,12 +95,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     margin: 5,
   },
-  PositionForm: {
+  PositionForm2: {
     alignSelf: 'center',
     alignContent: 'center',
     flex: 1,
   },
-  Text: {
+  Text2: {
     fontSize: 20,
     fontFamily: 'Delius-Regular',
     color: '#FFFFFF',
